@@ -1,4 +1,5 @@
 # Candice
 Your personal ChatBot.
 
-<img width="1440" alt="screenshot 2018-12-01 at 3 08 03 pm" src="https://user-images.githubusercontent.com/20112458/49326643-4445ae80-f57b-11e8-8e77-423ef629c389.png">
+<img width="1552" alt="Screenshot 2019-06-29 at 10 24 29 AM" src="https://user-images.githubusercontent.com/20112458/60379848-292b1680-9a58-11e9-90a9-e4eceb549477.png">
+
