@@ -23,7 +23,7 @@ Distributed under the MIT license. See `LICENSE` for more information.
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-## Tutorial of this 
+## How to build your own ChatBot -- Tutorial
 
    - [Sahil Rajput Medium](https://medium.com/@sahil.rajput/build-your-personal-chatbot-with-flask-6080d1cf1223)
    - [Sahil Rajput DEV.to](https://dev.to/sahilrajput/build-a-chatbot-using-flask-in-5-minutes-574i)
