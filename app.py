@@ -9,7 +9,7 @@ bot = ChatBot("Candice")
 bot.set_trainer(ListTrainer)
 bot.train(['What is your name?', 'My name is Candice'])
 bot.train(['Who are you?', 'I am a bot' ])
-bot.train(['Do created you?', 'Tony Stark', 'Sahil Rajput', 'You?'])
+bot.train(['Who created you?', 'Tony Stark', 'Sahil Rajput', 'You?'])
 bot.set_trainer(ChatterBotCorpusTrainer)
 bot.train("chatterbot.corpus.english")
 
