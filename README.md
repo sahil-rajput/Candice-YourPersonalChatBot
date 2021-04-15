@@ -1,19 +1,28 @@
-# Candice
+# BradBot
 Your personal ChatBot.
 
-<img width="1552" alt="Screenshot 2019-06-29 at 10 24 29 AM" src="https://user-images.githubusercontent.com/20112458/60379848-292b1680-9a58-11e9-90a9-e4eceb549477.png">
+This project runs a chat bot in a browser from your laptop. The chat bot uses the machine learning library SpaCy and can also learn user defined responses to phrases
 
-## Release History
-
-   - 0.0.1
-     
-        - Basic demo
+The app uses the package flask to serve the chat bot as a web aplication.
 
 ## Meta
 
-Sahil Rajput – [@\_sahilrajput](https://twitter.com/_sahilrajput) – sahil.rajput.0196@gmail.com
+Based on a demo project by Sahil Rajput – [@\_sahilrajput](https://twitter.com/_sahilrajput) – sahil.rajput.0196@gmail.com
 
 Distributed under the MIT license. See `LICENSE` for more information.
+
+## How to run
+
+1. Fork this repo (using git. Try https://git-scm.com/)
+2. Create a new environemnt using Anaconda Navigator (https://www.anaconda.com/) with Python 3.7 installed (Not sure this works with Python 3.8)
+3. Activate the environment (I used powershell launched from Anaconda.) 
+4. Install packages. I used powershell launched from Anaconda, again.
+   
+   For example, run: pip install flask
+   
+5. I am running the python file in the repository (which is now saved on your laptop) using visual studio code (https://code.visualstudio.com/download). You may need to check that you are in the right environment in Visul Studio Code (Ctrl + Shift + P). 
+6. I then run the file app.py in a powershell terminal launched from Visual Studio Code. 
+6. The app can then be seen in your borwser (I used chrome) at the local address that powershell suggests.  
 
 ## Contributing
 
