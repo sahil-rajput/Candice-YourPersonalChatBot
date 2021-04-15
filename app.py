@@ -25,11 +25,6 @@ python -m spacy download en_core_web_sm
 '''
 ######
 
-#pip install -U pip setuptools wheel
-#pip install -U spacy
-#python -m spacy download en_core_web_sm
-
-
 from flask import Flask, render_template, request
 import chatterbot
 from chatterbot import ChatBot
@@ -49,24 +44,14 @@ trainer = ChatterBotCorpusTrainer(chatbot)
 trainer.train("chatterbot.corpus.english")
 
 # Get a response to an input statement
-
 #print(chatbot.get_response("What is your name?"))
 
 trainer = ListTrainer(chatbot)
-#bot.set_trainer(ListTrainer)
-#bot.train(['What is your name?', 'My name is Candice'])
-#bot.train(['Who are you?', 'I am a bot' ])
-#bot.train(['Who created you?', 'Tony Stark', 'Sahil Rajput', 'You?'])
 
 trainer.train(['What is your name?', 'My name is Jason'])
 trainer.train(['Who are you?', 'I am Jason' ])
 trainer.train(['Who created you?', 'D&I', 'You?'])
 
-#bot.set_trainer(ChatterBotCorpusTrainer)
-#trainer = ChatterBotCorpusTrainer(bot)
-#bot.train("chatterbot.corpus.english")
-
-#trainer.train("chatterbot.corpus.english")
 @app.route("/")
 def home():
     return render_template("home.html")
