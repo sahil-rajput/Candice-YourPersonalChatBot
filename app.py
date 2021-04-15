@@ -1,5 +1,7 @@
 ######
 '''
+Using this useful guide: https://stackoverflow.com/questions/56268480/can-not-install-chatterbot-in-anaconda
+
 Before starting:
 
 1) Make a new envionment in anaconda
@@ -8,14 +10,14 @@ Before starting:
     open powershell (from anaconda navigator) and write: conda install python = 3.7
 
 3) Install necessary packages using powrshell by writing:
-pip install chatterbot
+
 
 pip install chatterbot==1.0.0
+pip install chatterbot-corpus==1.2.0
 pip install flask
+
+Not sure any of this is needed
 pip3 install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
-
-
-
 pip install -U pip setuptools wheel
 pip install -U spacy
 python -m spacy download en_core_web_sm
@@ -28,32 +30,15 @@ python -m spacy download en_core_web_sm
 #python -m spacy download en_core_web_sm
 
 
-
-
-
-
-
 from flask import Flask, render_template, request
 import chatterbot
-
-#import chatterbot-corpus
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-
-
 from chatterbot.trainers import ListTrainer
-#import spacy
 import os.path
-#import en_core_web_sm
-#nlp = spacy.load("en_core_web_sm")
-#nlp = spacy.load("en")
-#nlp = en_core_web_sm.load()
-#nlp = spacy.blank("en")
 
 
 app = Flask(__name__)
-
-
 
 chatbot = ChatBot('BradBot')
 
@@ -75,7 +60,7 @@ trainer = ListTrainer(chatbot)
 
 trainer.train(['What is your name?', 'My name is Jason'])
 trainer.train(['Who are you?', 'I am Jason' ])
-trainer.train(['Who created you?', 'JB-M', 'You?'])
+trainer.train(['Who created you?', 'D&I', 'You?'])
 
 #bot.set_trainer(ChatterBotCorpusTrainer)
 #trainer = ChatterBotCorpusTrainer(bot)
