@@ -1,7 +1,7 @@
 # BradBot
 Your personal ChatBot.
 
-This project runs a chat bot in a browser from your laptop. The chat bot uses the machine learning library SpaCy and can also learn user defined responses to phrases
+This project runs a chat bot in a browser from your laptop. The chat bot uses the machine learning library SpaCy and can also learn user defined responses to phrases.
 
 The app uses the package flask to serve the chat bot as a web aplication.
 
