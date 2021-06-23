@@ -1,0 +1,83 @@
+from ..tokenizer_exceptions import BASE_EXCEPTIONS
+from ...symbols import ORTH
+from ...util import update_exc
+
+
+_exc = {}
+
+
+# Source https://www.cs.tut.fi/~jkorpela/kielenopas/5.5.html
+for exc_data in [
+    {ORTH: "aik."},
+    {ORTH: "alk."},
+    {ORTH: "alv."},
+    {ORTH: "ark."},
+    {ORTH: "as."},
+    {ORTH: "eaa."},
+    {ORTH: "ed."},
+    {ORTH: "esim."},
+    {ORTH: "huom."},
+    {ORTH: "jne."},
+    {ORTH: "joht."},
+    {ORTH: "k."},
+    {ORTH: "ks."},
+    {ORTH: "lk."},
+    {ORTH: "lkm."},
+    {ORTH: "lyh."},
+    {ORTH: "läh."},
+    {ORTH: "miel."},
+    {ORTH: "milj."},
+    {ORTH: "Mm."},
+    {ORTH: "mm."},
+    {ORTH: "myöh."},
+    {ORTH: "n."},
+    {ORTH: "nimim."},
+    {ORTH: "n:o"},
+    {ORTH: "N:o"},
+    {ORTH: "nro"},
+    {ORTH: "ns."},
+    {ORTH: "nyk."},
+    {ORTH: "oik."},
+    {ORTH: "os."},
+    {ORTH: "p."},
+    {ORTH: "par."},
+    {ORTH: "per."},
+    {ORTH: "pj."},
+    {ORTH: "puh.joht."},
+    {ORTH: "prof."},
+    {ORTH: "puh."},
+    {ORTH: "pvm."},
+    {ORTH: "rak."},
+    {ORTH: "ry."},
+    {ORTH: "s."},
+    {ORTH: "siht."},
+    {ORTH: "synt."},
+    {ORTH: "t."},
+    {ORTH: "tark."},
+    {ORTH: "til."},
+    {ORTH: "tms."},
+    {ORTH: "toim."},
+    {ORTH: "v."},
+    {ORTH: "vas."},
+    {ORTH: "vast."},
+    {ORTH: "vrt."},
+    {ORTH: "yht."},
+    {ORTH: "yl."},
+    {ORTH: "ym."},
+    {ORTH: "yms."},
+    {ORTH: "yo."},
+    {ORTH: "yliopp."},
+    {ORTH: "ao."},
+    {ORTH: "em."},
+    {ORTH: "ko."},
+    {ORTH: "ml."},
+    {ORTH: "po."},
+    {ORTH: "so."},
+    {ORTH: "ts."},
+    {ORTH: "vm."},
+    {ORTH: "srk."},
+]:
+    _exc[exc_data[ORTH]] = [exc_data]
+
+
+TOKENIZER_EXCEPTIONS = update_exc(BASE_EXCEPTIONS, _exc)

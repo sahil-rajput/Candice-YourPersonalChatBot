@@ -1,0 +1,3 @@
+[console_scripts]
+spacy = spacy.cli:app
+

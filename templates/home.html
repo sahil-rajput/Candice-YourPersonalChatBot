@@ -1,148 +1,168 @@
 <!DOCTYPE html>
 <html>
-  <title>BradBot</title>
-  <head>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="{{url_for('static', filename='210414 Chatbot Logo.jpg')}}"
-    />
+<title>BradBot</title>
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='210414 Chatbot Logo.jpg')}}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
-      body {
-        font-family: monospace;
-      }
-      h1 {
-        background-color: yellow;
-        display: inline-block;
-        font-size: 3em;
-        margin: 0;
-        padding: 14px;
-      }
-      h3 {
-        color: black;
-        font-size: 20px;
-        margin-top: 3px;
-        text-align: center;
-      }
-      #chatbox {
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-        margin-top: 60px;
-      }
-      #userInput {
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-        margin-top: 60px;
-      }
-      #textInput {
-        width: 90%;
-        border: none;
-        border-bottom: 3px solid black;
-        font-family: monospace;
-        font-size: 17px;
-      }
-      .userText {
-        color: white;
-        font-family: monospace;
-        font-size: 17px;
-        text-align: right;
-        line-height: 30px;
-      }
-      .userText span {
-        background-color: #808080;
-        padding: 10px;
-        border-radius: 2px;
-      }
-      .botText {
-        color: white;
-        font-family: monospace;
-        font-size: 17px;
-        text-align: left;
-        line-height: 30px;
-      }
-      .botText span {
-        background-color: #4169e1;
-        padding: 10px;
-        border-radius: 2px;
-      }
-      #tidbit {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 300px;
-      }
-      .boxed {
-        margin-left: auto;
-        margin-right: auto;
-        width: 78%;
-        margin-top: 60px;
-        border: 1px solid green;
-      }
-      .box {
-        border: 2px solid black;
-      }
+        body {
+            font-family: tahoma;
+        }
+        
+        h1 {
+            background-color: #2092B6;
+            color: white;
+            /* display: inline-block; */
+            font-size: 3em;
+            /* margin: 0; */
+            padding: 20px;
+        }
+        
+        h3 {
+            color: black;
+            font-size: 20px;
+            margin-top: 3px;
+            text-align: center;
+        }
+        
+        #chatbox {
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            margin-top: 60px;
+        }
+        
+        #userInput {
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            margin-top: 60px;
+        }
+        
+        #textInput {
+            width: 90%;
+            border: 1px solid #2092B6;
+            border-bottom: 3px solid #2092B6;
+            border-radius: 7px;
+            font-family: tahoma;
+            font-size: 17px;
+            color: #808083;
+        }
+        
+        .userText {
+            color: white;
+            font-family: tahoma;
+            font-size: 17px;
+            text-align: right;
+            line-height: 30px;
+        }
+        
+        .userText span {
+            background-color: #808083;
+            padding: 10px;
+            border-radius: 7px;
+        }
+        
+        .botText {
+            color: white;
+            font-family: tahoma;
+            font-size: 17px;
+            text-align: left;
+            line-height: 30px;
+        }
+        
+        .botText span {
+            background-color: #170C59;
+            padding: 10px;
+            border-radius: 7px;
+        }
+        
+        #tidbit {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+        }
+        
+        .boxed {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            margin-top: 60px;
+            padding-bottom: 60px;
+            border: 1px solid #808083;
+            background-color: #D8D9DB;
+            border-radius: 7px;
+        }
+        
+        .box {
+            border: 2px solid #2092B6;
+        }
+        
+        .ofsted-blue box {
+            background-color: #2092B6;
+        }
     </style>
-  </head>
-  <body>
-    <img />
+</head>
+
+<body>
     <center>
-      <h1>
-        <img
-          src="{{url_for('static', filename='210414 Chatbot Logo.jpg')}}"
-          alt="BradBot"
-          style="width:40px;height:40px;"
-        />Your Personal ChatBot
-      </h1>
+        <h1>
+            <img src="{{url_for('static', filename='210414 Chatbot Logo.jpg')}}" alt="BradBot" style="width:40px;height:40px;" /> Your Personal ChatBot
+        </h1>
     </center>
     <h3>
-      <p>
-        Find this project on
-        <a href="https://github.com/BoTheMu/BradBot-YourPersonalChatBot">GitHub</a>.
-      </p>
+        <p>
+            Find this project on
+            <a href="https://github.com/BoTheMu/BradBot-YourPersonalChatBot">GitHub</a>.
+        </p>
     </h3>
     <div class="box"></div>
     <div class="boxed">
-      <div>
-        <div id="chatbox">
-          <img
-            src="{{url_for('static', filename='210414 Chatbot Logo.jpg')}}"
-            alt="BradBot"
-            style="width:40px;height:40px;"
-          />
-          <p class="botText">
-            <span>Hi! I'm BradBot your personal ChatBot </span>
-          </p>
+        <div>
+            <div id="chatbox">
+                <img src="{{url_for('static', filename='210414 Chatbot Logo.jpg')}}" alt="BradBot" style="width:40px;height:40px;" />
+                <p class="botText">
+                    <span>Hi! I'm BradBot your personal ChatBot </span>
+                </p>
+            </div>
+            <div id="userInput">
+                <input id="textInput" type="text" name="msg" placeholder="Message" />
+            </div>
         </div>
-        <div id="userInput">
-          <input id="textInput" type="text" name="msg" placeholder="Message" />
-        </div>
-      </div>
-      <script>
-        function getBotResponse() {
-          var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-          $("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          document
-            .getElementById("userInput")
-            .scrollIntoView({ block: "start", behavior: "smooth" });
-          $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-            $("#chatbox").append(botHtml);
-            document
-              .getElementById("userInput")
-              .scrollIntoView({ block: "start", behavior: "smooth" });
-          });
-        }
-        $("#textInput").keypress(function(e) {
-          if (e.which == 13) {
-            getBotResponse();
-          }
-        });
-      </script>
+        <script>
+            function getBotResponse() {
+                var rawText = $("#textInput").val();
+                var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+                $("#textInput").val("");
+                $("#chatbox").append(userHtml);
+                document
+                    .getElementById("userInput")
+                    .scrollIntoView({
+                        block: "start",
+                        behavior: "smooth"
+                    });
+                $.get("/get", {
+                    msg: rawText
+                }).done(function(data) {
+                    var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+                    $("#chatbox").append(botHtml);
+                    document
+                        .getElementById("userInput")
+                        .scrollIntoView({
+                            block: "start",
+                            behavior: "smooth"
+                        });
+                });
+            }
+            $("#textInput").keypress(function(e) {
+                if (e.which == 13) {
+                    getBotResponse();
+                }
+            });
+        </script>
     </div>
-  </body>
+</body>
+
 </html>

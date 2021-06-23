@@ -26,7 +26,6 @@ python -m spacy download en_core_web_sm
 ######
 
 from flask import Flask, render_template, request
-import chatterbot
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
@@ -40,7 +39,7 @@ chatbot = ChatBot('BradBot')
 # Create a new trainer for the chatbot
 trainer = ChatterBotCorpusTrainer(chatbot)
 
-# Train the chatbot based on the english corpus
+# Train the chatbot based on the english corpus # can make a .yml file
 trainer.train("chatterbot.corpus.english")
 
 # Get a response to an input statement
@@ -49,17 +48,20 @@ trainer.train("chatterbot.corpus.english")
 trainer = ListTrainer(chatbot)
 
 trainer.train(['What is your name?', 'My name is Jason'])
-trainer.train(['Who are you?', 'I am Jason' ])
+trainer.train(['Who are you?', 'I am Jason'])
 trainer.train(['Who created you?', 'D&I', 'You?'])
+
 
 @app.route("/")
 def home():
     return render_template("home.html")
+
 
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
     return str(chatbot.get_response(userText))
 
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
